@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDo Manager</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="./scripts.js" async></script>
+</head>
+
+<body>
+    <header>
+            <h1>ToDo Manager</h1>
+        </header>
+    <div class="content">
+
+        <form class="input-form">
+            <div class="input-form-items">
+                <label class="input-form-item-label">Task Details:</label>
+                <input class="input-form-item-field" type="text" id="task_details" name="task_details">
+            </div>
+            <div class="erro-message error-message-task-details">Please add valid Task Details!</div>
+            <div class="input-form-items">
+                <label class="input-form-item-label">Assignee:</label>
+                <input class="input-form-item-field" type="text" id="assignee" name="assignee">
+            </div>
+            <div class="erro-message error-message-assignee">Please add a valid Assignee Name!</div>
+            <div class="input-form-items">
+                <label class="input-form-item-label">Due Date:</label>
+                <input class="input-form-item-field" type="date" id="due_date" name="due_date">
+            </div>
+            <div class="erro-message error-message-due-date">Please add a valid Due Date!</div>
+            <div class="input-form-items margin-top-20">
+                <button type="button" onclick="onSubmit()">Add Task</button>
+            </div>
+        </form>
+        <div>
+            <div class="table-info-label">In Progress</div>
+            <div class="table-container">
+                <table id="inprogress-table" class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-header">Task</th>
+                            <th class="table-header">Assignee</th>
+                            <th class="table-header">Due Date</th>
+                            <th class="table-header">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <button type="button" onclick="onComplete()">Mark as Complete</button> -->
+        </div>
+        <div>
+            <div class="table-info-label">Completed</div>
+            <div class="table-container">
+                <table id="completed-table" class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-header">Task</th>
+                            <th class="table-header">Assignee</th>
+                            <th class="table-header">Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+            <p>© Shibobrota Das (<a href="mailto:shibobrota.das@dream11.com">shibobrota.das@dream11.com</a>)</p>
+        </footer>
+    <div class="none">
+        <table>
+            <tr id="inprogress-table-row">
+                <td class="inprogress-table-row-data inprogress-table-row-task">wef</td>
+                <td class="inprogress-table-row-data inprogress-table-row-assignee">waeg</td>
+                <td class="inprogress-table-row-data inprogress-table-row-date">1234</td>
+                <td class="inprogress-table-row-data"><input class="inprogress-table-row-checkbox" onchange="onCheckClick(event)"
+                        type="checkbox"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

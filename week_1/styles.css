@@ -1,0 +1,163 @@
+header,
+footer,
+.flex-center,
+.input-form-items,
+.input-form,
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+header,
+footer {
+    background-color: #ddd;
+    width: 100%;
+}
+
+html {
+    font-family: Roboto;
+    font-size: medium;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+
+.content {
+    margin-top: 20px;
+    flex-direction: column;
+    width: 80%;
+}
+
+.input-form {
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+}
+
+.input-form-items {
+    margin-top: 10px;
+    align-items: baseline;
+}
+
+.input-form-item-label {
+    display: flex;
+    min-width: 100px;
+    font-size: medium;
+}
+
+.input-form-item-field {
+    display: flex;
+    min-width: 400px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table tbody {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.table-header {
+    text-align: start;
+}
+
+.none {
+    display: none;
+}
+
+
+.table td,
+.table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #056cc1;
+    color: white;
+}
+
+button {
+    padding: 12px;
+    background-color: #056cc1;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+    width: 140px;
+}
+
+button:hover {
+    background-color: #045da6;
+}
+
+.table-container {
+    height: 300px;
+    border: 1px solid rgb(217, 217, 217);
+    overflow: auto;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+
+.table-container::-webkit-scrollbar {
+    display: none;
+}
+
+.table thead tr {
+    position: sticky;
+    top: 0;
+}
+
+.table-info-label {
+    font-size: larger;
+    font-weight: bold;
+    margin: 20px 0px 10px 0px;
+}
+
+.inprogress-table-row-checkbox {
+    cursor: pointer;
+}
+
+input[type=text],
+input[type=date] {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: large;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.erro-message {
+    visibility: hidden;
+    color: rgba(248, 45, 0, 0.986);
+    font-size: small;
+}
+
+.display-visible {
+    visibility: visible;
+}
+
+.display-hidden {
+    visibility: hidden;
+}
