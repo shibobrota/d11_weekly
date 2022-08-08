@@ -1,0 +1,12 @@
+{
+    "userList": [
+        {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},  
+        {"name":"Bob", "email":"bob32@gmail.com"},  
+        {"name":"Jai", "email":"jai87@gmail.com"},
+        {"name":"viru", "email":"viry32@gmail.com"},  
+        {"name":"gabbar", "email":"gabbar7@gmail.com"},
+        {"name":"Bobbar", "email":"bobbar32@gmail.com"},
+        {"name":"Ghanshyam", "email":"ghanshyamjaiswal3@gmail.com"},    
+        {"name":"Jaiesh", "email":"jaiesh87@gmail.com"} 
+    ]
+}

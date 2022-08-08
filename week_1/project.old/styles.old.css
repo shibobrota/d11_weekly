@@ -10,25 +10,13 @@ footer,
 
 header,
 footer {
-    background-color: #056cc1;
-    color: white;
+    background-color: #ddd;
     width: 100%;
-    text-decoration: none;
-}
-
-header {
-    justify-content: flex-start;
-}
-
-header div {
-    margin: 10px 0px 10px 20px;
-    font-size: larger;
 }
 
 html {
     font-family: Roboto;
     font-size: medium;
-    background-color: #eee;
 }
 
 body {
@@ -39,13 +27,9 @@ body {
 }
 
 .content {
+    margin-top: 20px;
     flex-direction: column;
-    width: 60%;
-    background-color: #fff;
-    margin: 20px;
-    padding: 30px 30px 10px 30px;
-    box-shadow: 2px 2px 5px 2px #c1c1c1;
-    border-radius: 5px;
+    width: 80%;
 }
 
 .input-form {
@@ -57,8 +41,6 @@ body {
 .input-form-items {
     margin-top: 10px;
     align-items: baseline;
-    width: 100%;
-    justify-content: end;
 }
 
 .input-form-item-label {
@@ -153,7 +135,7 @@ button:hover {
 }
 
 input[type=text],
-input[type=date], select {
+input[type=date] {
     width: 100%;
     padding: 12px 12px;
     margin: 8px 0;
@@ -174,4 +156,8 @@ input[type=date], select {
 
 .display-visible {
     visibility: visible;
+}
+
+.display-hidden {
+    visibility: hidden;
 }

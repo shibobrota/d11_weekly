@@ -15,7 +15,7 @@
 
 <body>
     <header>
-            <div>To-Do Manager</div>
+            <h1>ToDo Manager</h1>
         </header>
     <div class="content">
 
@@ -27,13 +27,12 @@
             <div class="erro-message error-message-task-details">Please add valid Task Details!</div>
             <div class="input-form-items">
                 <label class="input-form-item-label">Assignee:</label>
-                <select class="input-form-item-field" type="text" id="assignee" name="assignee">
-                </select>
+                <input class="input-form-item-field" type="text" id="assignee" name="assignee">
             </div>
             <div class="erro-message error-message-assignee">Please add a valid Assignee Name!</div>
             <div class="input-form-items">
                 <label class="input-form-item-label">Due Date:</label>
-                <input class="input-form-item-field" type="date" id="due_date" name="due_date" value="">
+                <input class="input-form-item-field" type="date" id="due_date" name="due_date">
             </div>
             <div class="erro-message error-message-due-date">Please add a valid Due Date!</div>
             <div class="input-form-items margin-top-20">
@@ -56,6 +55,7 @@
                     </tbody>
                 </table>
             </div>
+            <!-- <button type="button" onclick="onComplete()">Mark as Complete</button> -->
         </div>
         <div>
             <div class="table-info-label">Completed</div>
@@ -80,9 +80,9 @@
     <div class="none">
         <table>
             <tr id="inprogress-table-row">
-                <td class="inprogress-table-row-data inprogress-table-row-task"></td>
-                <td class="inprogress-table-row-data inprogress-table-row-assignee"></td>
-                <td class="inprogress-table-row-data inprogress-table-row-date"></td>
+                <td class="inprogress-table-row-data inprogress-table-row-task">wef</td>
+                <td class="inprogress-table-row-data inprogress-table-row-assignee">waeg</td>
+                <td class="inprogress-table-row-data inprogress-table-row-date">1234</td>
                 <td class="inprogress-table-row-data"><input class="inprogress-table-row-checkbox" onchange="onCheckClick(event)"
                         type="checkbox"></td>
             </tr>

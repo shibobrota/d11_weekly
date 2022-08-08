@@ -1,0 +1,73 @@
+{
+    "taskList": [
+        {
+            "details": "Assignment 1",
+            "dueDate": "2022-08-04",
+            "status": "IN_PROGRESS",
+            "assignee": {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+            "subTasks": [
+                {
+                    "details": "HTML Page",
+                    "dueDate": "2022-08-03",
+                    "status": "IN_PROGRESS"
+                },
+                {
+                    "details": "CSS Module",
+                    "dueDate": "2022-08-02",
+                    "status": "IN_PROGRESS"
+                }
+            ]
+        },{
+            "details": "Assignment 2",
+            "dueDate": "2022-08-14",
+            "status": "IN_PROGRESS",
+            "assignee": {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+            "subTasks": [
+                {
+                    "details": "React Page",
+                    "dueDate": "2022-08-13",
+                    "status": "IN_PROGRESS"
+                },
+                {
+                    "details": "User Module",
+                    "dueDate": "2022-08-12",
+                    "status": "IN_PROGRESS"
+                }
+            ]
+        },{
+            "details": "Assignment 3",
+            "dueDate": "2022-08-24",
+            "status": "IN_PROGRESS",
+            "assignee": {"name":"Ghanshyam", "email":"ghanshyamjaiswal3@gmail.com"},    
+            "subTasks": [
+                {
+                    "details": "Native Android Screen",
+                    "dueDate": "2022-08-23",
+                    "status": "IN_PROGRESS"
+                },
+                {
+                    "details": "Game Play Module",
+                    "dueDate": "2022-08-22",
+                    "status": "IN_PROGRESS"
+                }
+            ]
+        },{
+            "details": "Assignment 0",
+            "dueDate": "2022-07-24",
+            "status": "COMPLETED",
+            "assignee": {"name":"Ghanshyam", "email":"ghanshyamjaiswal3@gmail.com"},   
+            "subTasks": [
+                {
+                    "details": "Sample HTML Screen",
+                    "dueDate": "2022-07-23",
+                    "status": "COMPLETED"
+                },
+                {
+                    "details": "System Setup",
+                    "dueDate": "2022-07-22",
+                    "status": "COMPLETED"
+                }
+            ]
+        }
+    ]
+}
