@@ -46,7 +46,7 @@ fetch("./test-data/users.json").then(resp => resp.json()).then(users => {
 
 
 function createTaskRow(details: string, assignee: string, dueDate: Date) {
-    let tr = document.createElement("tr");
+    let tr = document.createElement("tr") as HTMLTableRowElement;
     tr.insertCell().appendChild(document.createTextNode(details));
     tr.insertCell().appendChild(document.createTextNode(assignee));
     tr.insertCell().appendChild(document.createTextNode(dueDate.toDateString()));
@@ -57,18 +57,17 @@ function addToTable(task: Task) {
     let tbody, checkbox;
     let taskRow = createTaskRow(task.details, task.assignee.name, task.dueDate);
     if (task.status == TaskStatus.IN_PROGRESS) {
-        tbody = document.getElementById('inprogress-table').getElementsByTagName('tbody')[0];
+        tbody = document.getElementById('inprogress-table')?.getElementsByTagName('tbody')[0];
 
         checkbox = document.createElement("input")
         checkbox.type = "checkbox";
         checkbox.onchange = onCheckClick;
         taskRow.insertCell(3)
-        taskRow.lastChild.appendChild(checkbox)
+        taskRow.lastChild?.appendChild(checkbox)
     } else {
-        tbody = document.getElementById('completed-table').getElementsByTagName('tbody')[0];
+        tbody = document.getElementById('completed-table')?.getElementsByTagName('tbody')[0];
     }
-
-    tbody.insertBefore(taskRow, tbody.firstChild)
+    if (tbody) tbody.insertBefore(taskRow, tbody.firstChild);
 }
 
 function onSubmit() {
@@ -83,8 +82,7 @@ function onSubmit() {
 }
 
 function onCheckClick(ev: Event) {
-    console.log(typeof ev);
-    let inprogressTableRow = (ev.target as HTMLInputElement).parentElement.parentElement as HTMLTableRowElement;
+    let inprogressTableRow = (ev.target as HTMLInputElement).parentElement?.parentElement as HTMLTableRowElement;
     let idx = inprogressTableRow.rowIndex;
     let table = document.getElementById('inprogress-table') as HTMLTableElement;
     table.deleteRow(idx)
