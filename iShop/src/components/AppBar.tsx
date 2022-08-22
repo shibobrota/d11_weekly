@@ -1,46 +1,42 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {DataStore} from '../DataStore';
+import {LEFT_ARROW, LOGO, SHOPPING_CART} from '../values';
 
-const shoppingCart = require('../assets/shopping-cart.png');
-const leftArrow = require('../assets/left.png');
-const logo = require('../assets/shop.png');
-
-export function AppBar(props: {
+export function AppBar({
+  isHome,
+  onCartPress,
+  onBackPress,
+}: {
   isHome: boolean;
   onCartPress?: Function;
   onBackPress?: Function;
 }) {
   const cartList = DataStore(state => state.cartList);
 
-  function onCartPress() {
-    if (props.onCartPress) {
-      props.onCartPress();
+  function onCartIconPress() {
+    if (onCartPress) {
+      onCartPress();
     }
   }
 
-  function onBackPress() {
-    if (!props.isHome && props.onBackPress) {
-      props.onBackPress();
+  function onBackIconPress() {
+    if (!isHome && onBackPress) {
+      onBackPress();
     }
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
-        <TouchableOpacity onPress={onBackPress}>
-          <Image
-            source={props.isHome ? logo : leftArrow}
-            style={styles.leftArrow}
-          />
+        <TouchableOpacity onPress={onBackIconPress}>
+          <Image source={isHome ? LOGO : LEFT_ARROW} style={styles.leftArrow} />
         </TouchableOpacity>
-        <Text style={styles.headerText}>
-          {props.isHome ? 'iShop' : 'Your Cart'}
-        </Text>
+        <Text style={styles.headerText}>{isHome ? 'iShop' : 'Your Cart'}</Text>
       </View>
-      {props.isHome && (
-        <TouchableOpacity onPress={onCartPress}>
-          <Image source={shoppingCart} style={styles.shoppingCart} />
+      {isHome && (
+        <TouchableOpacity onPress={onCartIconPress}>
+          <Image source={SHOPPING_CART} style={styles.shoppingCart} />
           <View style={styles.cartCount}>
             <Text style={styles.cartCountText}>{cartList.length}</Text>
           </View>

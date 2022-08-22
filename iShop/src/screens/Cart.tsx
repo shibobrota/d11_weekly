@@ -16,6 +16,7 @@ import {ListEndBufferItem} from '../components/ListEndBufferItem';
 import {EMPTY_CART} from '../values';
 
 export function Cart({navigation}) {
+  console.log( navigation);
   const cartList = DataStore(state => state.cartList);
   const removeFromCart = DataStore(state => state.removeFromCart);
 

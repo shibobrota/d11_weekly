@@ -3,10 +3,16 @@ import {Product} from '../types';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {CANCEL_ICON, PLACEHOLDER_IMAGE} from '../values';
 
-export function CartListItem(props: {product: Product; removeItem?: Function}) {
+export function CartListItem({
+  product,
+  removeItem,
+}: {
+  product: Product;
+  removeItem?: Function;
+}) {
   function onRemovePress() {
-    if (props.removeItem) {
-      props.removeItem(props.product);
+    if (removeItem) {
+      removeItem(product);
     }
   }
 
@@ -15,14 +21,12 @@ export function CartListItem(props: {product: Product; removeItem?: Function}) {
       <View style={styles.leftSection}>
         <Image
           source={
-            props.product.imageURL
-              ? {uri: props.product.imageURL}
-              : PLACEHOLDER_IMAGE
+            product.imageURL ? {uri: product.imageURL} : PLACEHOLDER_IMAGE
           }
           style={styles.img}
         />
         <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">
-          {props.product.name}
+          {product.name}
         </Text>
       </View>
       <TouchableOpacity onPress={onRemovePress}>

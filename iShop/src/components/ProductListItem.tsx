@@ -4,36 +4,34 @@ import {Button, Image, StyleSheet, Text, View} from 'react-native';
 
 const PLACEHOLDER = require('../assets/image.png');
 
-export function ProductListItem(props: {
+export function ProductListItem({
+  product,
+  addRemoveItem,
+}: {
   product: Product;
   addRemoveItem?: Function;
 }) {
   const [isAdded, setIsAdded] = useState(false);
-  props.product.misc = setIsAdded;
+  product.misc = setIsAdded;
 
   function onPress() {
     setIsAdded(!isAdded);
-    if (props.addRemoveItem) {
-      props.addRemoveItem(
-        props.product,
-        !isAdded ? ItemState.ADDED : ItemState.REMOVED,
-      );
+    if (addRemoveItem) {
+      addRemoveItem(product, !isAdded ? ItemState.ADDED : ItemState.REMOVED);
     }
   }
 
   return (
     <View style={styles.container}>
       <Image
-        source={
-          props.product.imageURL ? {uri: props.product.imageURL} : PLACEHOLDER
-        }
+        source={product.imageURL ? {uri: product.imageURL} : PLACEHOLDER}
         style={styles.img}
       />
       <Text style={styles.name} numberOfLines={1}>
-        {props.product.name}
+        {product.name}
       </Text>
       <Text style={styles.description} numberOfLines={2}>
-        {(props.product.description || 'No Description Available') + '\n '}
+        {(product.description || 'No Description Available') + '\n '}
       </Text>
       <Button title={!isAdded ? 'Add Item' : 'Remove Item'} onPress={onPress} />
     </View>

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {useInfiniteQuery} from 'react-query';
 import {getAllData} from '../ApiHandlers';
-import { mapToProduct, Screen } from "../utils";
+import {mapToProduct, Screen} from '../utils';
 import {ItemState, Product} from '../types';
 import {
   FlatList,

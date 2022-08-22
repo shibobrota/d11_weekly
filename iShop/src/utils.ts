@@ -7,6 +7,7 @@ export function mapToProduct(resp: Collection) {
     description: resp.description || '',
     qty: 0,
     id: resp.slug ?? '',
+    misc: null,
   };
   return product;
 }

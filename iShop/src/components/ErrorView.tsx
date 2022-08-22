@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-export const ErrorView = (props: {message: string}) => {
+export const ErrorView = ({message}: {message: string}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>{props.message}</Text>
+      <Text style={styles.textStyle}>{message}</Text>
     </View>
   );
 };
