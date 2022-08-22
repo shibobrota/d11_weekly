@@ -1,7 +1,8 @@
-import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {DataStore} from '../DataStore';
-import {LEFT_ARROW, LOGO, SHOPPING_CART} from '../values';
+import React from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { DataStore } from "../DataStore";
+import { LEFT_ARROW, LOGO, SHOPPING_CART } from "../values";
+import { APP_NAME, YOUR_CART } from "../strings";
 
 export function AppBar({
   isHome,
@@ -32,7 +33,7 @@ export function AppBar({
         <TouchableOpacity onPress={onBackIconPress}>
           <Image source={isHome ? LOGO : LEFT_ARROW} style={styles.leftArrow} />
         </TouchableOpacity>
-        <Text style={styles.headerText}>{isHome ? 'iShop' : 'Your Cart'}</Text>
+        <Text style={styles.headerText}>{isHome ? APP_NAME : YOUR_CART}</Text>
       </View>
       {isHome && (
         <TouchableOpacity onPress={onCartIconPress}>
@@ -49,12 +50,12 @@ export function AppBar({
 const styles = StyleSheet.create({
   container: {
     padding: 12,
-    backgroundColor: 'rgb(251,251,251)',
-    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: "rgb(251,251,251)",
+    borderBottomColor: "rgba(0, 0, 0, 0.1)",
     borderBottomWidth: 1,
-    borderStyle: 'solid',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    borderStyle: "solid",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   shoppingCart: {
     width: 25,
@@ -67,23 +68,23 @@ const styles = StyleSheet.create({
     height: 30,
   },
   leftSection: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   headerText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: 10,
-    color: 'rgb(0, 0, 0)',
+    color: "rgb(0, 0, 0)",
   },
   cartCount: {
-    position: 'absolute',
+    position: "absolute",
     flex: 1,
     right: 0,
     top: 0,
-    backgroundColor: 'rgb(255,55,0)',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "rgb(255,55,0)",
+    justifyContent: "center",
+    alignItems: "center",
     height: 20,
     borderRadius: 5,
     paddingRight: 3,
@@ -91,6 +92,6 @@ const styles = StyleSheet.create({
   },
   cartCountText: {
     fontSize: 13,
-    color: 'rgb(255, 255, 255)',
+    color: "rgb(255, 255, 255)",
   },
 });

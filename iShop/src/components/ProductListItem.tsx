@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {ItemState, Product} from '../types';
-import {Button, Image, StyleSheet, Text, View} from 'react-native';
-
-const PLACEHOLDER = require('../assets/image.png');
+import React, { useState } from "react";
+import { ItemState, Product } from "../types";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { ADD_ITEM, NO_DESCRIPTION_AVAILABLE, REMOVE_ITEM } from "../strings";
+import { PLACEHOLDER_IMAGE } from "../values";
 
 export function ProductListItem({
   product,
@@ -24,16 +24,18 @@ export function ProductListItem({
   return (
     <View style={styles.container}>
       <Image
-        source={product.imageURL ? {uri: product.imageURL} : PLACEHOLDER}
+        source={
+          product.imageURL ? { uri: product.imageURL } : PLACEHOLDER_IMAGE
+        }
         style={styles.img}
       />
       <Text style={styles.name} numberOfLines={1}>
         {product.name}
       </Text>
       <Text style={styles.description} numberOfLines={2}>
-        {(product.description || 'No Description Available') + '\n '}
+        {(product.description || NO_DESCRIPTION_AVAILABLE) + "\n "}
       </Text>
-      <Button title={!isAdded ? 'Add Item' : 'Remove Item'} onPress={onPress} />
+      <Button title={!isAdded ? ADD_ITEM : REMOVE_ITEM} onPress={onPress} />
     </View>
   );
 }
@@ -41,17 +43,17 @@ export function ProductListItem({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     borderBottomWidth: 2,
     borderRightWidth: 2,
     borderLeftWidth: 0.5,
     borderTopWidth: 0.5,
-    borderColor: 'rgba(63,63,63,0.1)',
+    borderColor: "rgba(63,63,63,0.1)",
     borderRadius: 7,
     margin: 7,
-    backgroundColor: 'rgb(255, 255, 255)',
+    backgroundColor: "rgb(255, 255, 255)",
   },
   img: {
     width: 130,
@@ -63,9 +65,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   name: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 15,
     marginTop: 5,
-    color: 'rgb(42,42,42)',
+    color: "rgb(42,42,42)",
   },
 });

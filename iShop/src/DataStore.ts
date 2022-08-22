@@ -1,5 +1,5 @@
-import create from 'zustand';
-import {Product, ProductDataStore} from './types';
+import create from "zustand";
+import { Product, ProductDataStore } from "./types";
 
 export const DataStore = create<ProductDataStore>(set => ({
   products: [],
@@ -7,15 +7,15 @@ export const DataStore = create<ProductDataStore>(set => ({
   isLoading: false,
   isError: false,
   setProducts: (products: Product[]) => {
-    return set(() => ({products: products}));
+    return set(() => ({ products: products }));
   },
   addProducts: (products: Product[]) => {
-    console.log(products.length + 'products added');
-    return set(state => ({products: [...state.products, ...products]}));
+    // console.log(products.length + 'products added');
+    return set(state => ({ products: [...state.products, ...products] }));
   },
   addToCart: (prod: Product) => {
     // console.log(prod);
-    return set(state => ({cartList: [...state.cartList, prod]}));
+    return set(state => ({ cartList: [...state.cartList, prod] }));
   },
   removeFromCart: (prod: Product) => {
     // console.log(prod);
@@ -26,9 +26,9 @@ export const DataStore = create<ProductDataStore>(set => ({
     }));
   },
   setLoadingStatus: (status: boolean) => {
-    return set(() => ({isLoading: status}));
+    return set(() => ({ isLoading: status }));
   },
   setErrorStatus: (status: boolean) => {
-    return set(() => ({isError: status}));
+    return set(() => ({ isError: status }));
   },
 }));

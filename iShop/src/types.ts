@@ -13,7 +13,7 @@ export interface RarityRank {
 }
 
 export interface Traits {
-  'Rarity Rank'?: RarityRank;
+  "Rarity Rank"?: RarityRank;
 }
 
 export interface Stats {

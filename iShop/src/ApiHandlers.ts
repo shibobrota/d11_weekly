@@ -1,9 +1,14 @@
-import axios from 'axios';
-import {Collection} from './types';
+import axios from "axios";
+import { Collection } from "./types";
 
-const BASE_URL = 'https://api.opensea.io/api/v1/collections';
+export const apiKeys = {
+  GET_ALL_DATA: "get-all-data",
+};
 
-export const getAllData = ({start, end}: {start: number; end: number}) => {
-  const url = BASE_URL + '?offset=' + start + '&limit=' + end;
-  return axios.get<{collections: Collection[]}>(url);
+const BASE_URL = "https://api.opensea.io/api/v1/collections";
+
+export const getAllData = ({ start, end }: { start: number; end: number }) => {
+  const url = BASE_URL + "?offset=" + start + "&limit=" + end;
+  // console.log(url);
+  return axios.get<{ collections: Collection[] }>(url);
 };

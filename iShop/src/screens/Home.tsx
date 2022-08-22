@@ -1,29 +1,24 @@
-import React, {useEffect, useRef} from 'react';
-import {useInfiniteQuery} from 'react-query';
-import {getAllData} from '../ApiHandlers';
-import {mapToProduct, Screen} from '../utils';
-import {ItemState, Product} from '../types';
-import {
-  FlatList,
-  ListRenderItem,
-  ListRenderItemInfo,
-  StyleSheet,
-} from 'react-native';
-import {ProductListItem} from '../components/ProductListItem';
-import {DataStore} from '../DataStore';
-import {AppBar} from '../components/AppBar';
+import React, { useEffect, useRef } from "react";
+import { useInfiniteQuery } from "react-query";
+import { apiKeys, getAllData } from "../ApiHandlers";
+import { mapToProduct, Screen } from "../utils";
+import { ItemState, Product } from "../types";
+import { FlatList, ListRenderItem, ListRenderItemInfo, StyleSheet } from "react-native";
+import { ProductListItem } from "../components/ProductListItem";
+import { DataStore } from "../DataStore";
+import { AppBar } from "../components/AppBar";
 
-export const Home = ({navigation}) => {
+export const Home = ({ navigation }) => {
   const addProducts = DataStore(state => state.addProducts);
   const setErrorState = DataStore(state => state.setErrorStatus);
   const setLoadingState = DataStore(state => state.setLoadingStatus);
   const productsState = DataStore(state => state.products);
   const addToCart = DataStore(state => state.addToCart);
   const removeFromCart = DataStore(state => state.removeFromCart);
-  const offset = useRef({start: 0, end: 10});
+  const offset = useRef({ start: 0, end: 10 });
 
-  const {isError, isFetchingNextPage, isLoading, fetchNextPage} =
-    useInfiniteQuery('get-all-data', () => getAllData(offset.current), {
+  const { isError, isFetchingNextPage, isLoading, fetchNextPage } =
+    useInfiniteQuery(apiKeys.GET_ALL_DATA, () => getAllData(offset.current), {
       onSuccess: data => {
         addProducts(
           data?.pages[data?.pages.length - 1].data.collections?.map(el =>
@@ -44,7 +39,7 @@ export const Home = ({navigation}) => {
   }, [isError, setErrorState]);
 
   useEffect(() => {
-    console.log('isFetchingNextPage', isFetchingNextPage);
+    // console.log('isFetchingNextPage', isFetchingNextPage);
     setLoadingState(isFetchingNextPage || isLoading);
   }, [isLoading, isFetchingNextPage, setLoadingState]);
 
@@ -57,7 +52,7 @@ export const Home = ({navigation}) => {
   };
 
   function addRemoveItem(prod: Product, state: ItemState) {
-    console.log(prod, state);
+    // console.log(prod, state);
     if (state === ItemState.ADDED) {
       addToCart(prod);
     } else {
@@ -70,7 +65,7 @@ export const Home = ({navigation}) => {
   }
 
   function onCartClick() {
-    console.log('Cart Clicked');
+    // console.log('Cart Clicked');
     navigation.navigate(Screen.Cart);
   }
 
@@ -96,6 +91,6 @@ export const Home = ({navigation}) => {
 const styles = StyleSheet.create({
   row: {
     flex: 1,
-    justifyContent: 'space-around',
+    justifyContent: "space-around",
   },
 });

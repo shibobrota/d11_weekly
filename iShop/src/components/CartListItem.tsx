@@ -1,7 +1,7 @@
-import React from 'react';
-import {Product} from '../types';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {CANCEL_ICON, PLACEHOLDER_IMAGE} from '../values';
+import React from "react";
+import { Product } from "../types";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { CANCEL_ICON, PLACEHOLDER_IMAGE } from "../values";
 
 export function CartListItem({
   product,
@@ -21,7 +21,7 @@ export function CartListItem({
       <View style={styles.leftSection}>
         <Image
           source={
-            product.imageURL ? {uri: product.imageURL} : PLACEHOLDER_IMAGE
+            product.imageURL ? { uri: product.imageURL } : PLACEHOLDER_IMAGE
           }
           style={styles.img}
         />
@@ -39,19 +39,19 @@ export function CartListItem({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     padding: 10,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     borderBottomWidth: 2,
     borderRightWidth: 2,
     borderLeftWidth: 0.5,
     borderTopWidth: 0.5,
-    borderColor: 'rgba(63,63,63,0.1)',
+    borderColor: "rgba(63,63,63,0.1)",
     borderRadius: 5,
     margin: 5,
-    flexDirection: 'row',
-    backgroundColor: 'rgb(255, 255, 255)',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    backgroundColor: "rgb(255, 255, 255)",
+    justifyContent: "space-between",
   },
   img: {
     width: 50,
@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   name: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 15,
     marginLeft: 20,
-    color: 'rgb(42,42,42)',
+    color: "rgb(42,42,42)",
     maxWidth: 200,
   },
   cancelIcon: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   leftSection: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

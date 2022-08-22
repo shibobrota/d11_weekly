@@ -1,5 +1,5 @@
-import React from 'react';
-import {AppBar} from '../components/AppBar';
+import React from "react";
+import { AppBar } from "../components/AppBar";
 import {
   FlatList,
   Image,
@@ -8,15 +8,15 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native';
-import {DataStore} from '../DataStore';
-import {Product} from '../types';
-import {CartListItem} from '../components/CartListItem';
-import {ListEndBufferItem} from '../components/ListEndBufferItem';
-import {EMPTY_CART} from '../values';
+} from "react-native";
+import { DataStore } from "../DataStore";
+import { Product } from "../types";
+import { CartListItem } from "../components/CartListItem";
+import { ListEndBufferItem } from "../components/ListEndBufferItem";
+import { EMPTY_CART } from "../values";
 
-export function Cart({navigation}) {
-  console.log( navigation);
+export function Cart({ navigation }) {
+  // console.log(navigation);
   const cartList = DataStore(state => state.cartList);
   const removeFromCart = DataStore(state => state.removeFromCart);
 
@@ -32,7 +32,7 @@ export function Cart({navigation}) {
   };
 
   function onBackPressed() {
-    console.log('Back Pressed in Cart Screen');
+    // console.log('Back Pressed in Cart Screen');
     navigation.pop();
   }
 
@@ -62,8 +62,8 @@ export function Cart({navigation}) {
 const styles = StyleSheet.create({
   emptyView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   emptyViewImage: {
     width: 100,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   message: {
     marginTop: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 25,
   },
 });
